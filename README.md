@@ -41,13 +41,33 @@ Build Info: {
 ***
 
 ## Node.js 와 MongoDB 연동 
-1. [Node.js 와 MongoDB 연동](https://velog.io/@ckstn0777/MongoDB%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%B4%EB%B3%B4%EC%9E%90)
+[Node.js 와 MongoDB 연동](https://velog.io/@ckstn0777/MongoDB%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%B4%EB%B3%B4%EC%9E%90)   
+**vscode** 
+> vscode에서 터미널 열기
+> ```
+> npm init -y   
+> npm install mongodb
+> ```
+ 
+> parkage.json 해당 js로 수정
+> ```
+> "start": "node server.js"
+> "start": "node insert_one.js"
+> ```
 
-1.vscode 
+> 터미널
+> ```
+> npm start
+> ```
+> Connected correctly. 출력하는지 확인하기    
 
-> dfsdfd
-> >dsfd
-> * fddff
+> Robo3T에서 shell 열기
+> ```sql
+> db.getCollection('users').find({})
+> ```
+> 데이터 insert 되었는지 확인
+공식문서 참고 : [Node.js MongoDB Driver API](https://mongodb.github.io/node-mongodb-native/3.6/api/)
+
 
 
 ***
