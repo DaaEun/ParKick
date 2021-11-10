@@ -1,24 +1,11 @@
-DBserver
+Parkick DBserver
 ==================
-
->- 물리적 DB 서버와 DB management 통합   
->   * 프로젝트 규모가 작아 문제될만한 상황은 없으나, DB접속이 많아진다면(API서버와 main서버에서 빈번하게 요청이 많이 발생한다면) 로드벨런싱 잡아줘야 함.   
->   * 따라서 가시성에 초점맞춰 굳이 두 파티션으로 구분 짓기.
-> 
->- 핵심적으로 공부할 것
->   * restAPI(Client와 API서버간 request)
->   * TCP socket 통신(나머지 request)
->
->- Mongo DB 생성 및 설계
->
->- 데이터를 주고받을 때, 포맷 형태 즉 일종의 통신 프로트콜 구상하기
->
->- DB 서버 : 통신 규약 설계(주차장존 좌표와 유저 정보 전송)  
+## MongoDB 개념
+[SQL vs NoQSQL과 Mongo](https://velog.io/@ckstn0777/MongoDB%EB%9E%80)
 
 ***
-MongoDB 개념 및 설치
------------------
-[SQL vs NoQSQL과 Mongo](https://velog.io/@ckstn0777/MongoDB%EB%9E%80)
+
+## MongoDB 설치
 ```
 C:\Users\didek>mongo --version
 MongoDB shell version v5.0.3
@@ -38,21 +25,31 @@ Build Info: {
 ```
 
 ***
-MongoDB 관리 GUI 툴
------------------
-1. MongoDB Compass : database, table UI가 깔끔하게 정리되어있어서 쓸만하다.
-2. Robo 3T : 장점은 shell을 사용할 수 있다.
+
+## MongoDB 관리 GUI 툴
+[MongoDB 관리 GUI 툴](https://velog.io/@ckstn0777/MongoDB%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%B4%EB%B3%B4%EC%9E%90)
+1. MongoDB Compass 
+     * host : localhost
+     * 포트 : 27017(default)
+     * 접속
+2. Robo 3T
+     * MongoDB랑 connect
+     * host와 포트 동일
+     * name : parkickdb
+     * Open shell 클릭 -> 쿼리문 작성가능 
 
 ***
-Node.js 와 MongoDB 연동 
------------------
-_nodejs 언어 선택_
 
+## Node.js 와 MongoDB 연동 
 [Node.js 와 MongoDB 연동](https://velog.io/@ckstn0777/MongoDB%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%B4%EB%B3%B4%EC%9E%90)
+vscode 
+>
+
 
 ***
-Mongoose 설치
------------------
+
+## Mongoose 설치
+
 **1. mongodb vs mongoose**   
 
 - mongodb 라이브러리
@@ -84,6 +81,7 @@ mongoose
 [Mongoose ?](https://dev-skill.tistory.com/77)
 
 ***
+
 restAPI
 -----------------
 [Node.js(express)와 MongoDB 연동 RESTful API - Mongoose](https://poiemaweb.com/mongoose)
