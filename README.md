@@ -28,6 +28,7 @@ Build Info: {
 
 ## MongoDB 관리 GUI 툴
 [MongoDB 관리 GUI 툴](https://velog.io/@ckstn0777/MongoDB%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%B4%EB%B3%B4%EC%9E%90)
+
 1. MongoDB Compass 
      * host : localhost
      * 포트 : 27017(default)
@@ -42,7 +43,8 @@ Build Info: {
 
 ## Node.js 와 MongoDB 연동 
 [Node.js 와 MongoDB 연동](https://velog.io/@ckstn0777/MongoDB%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%B4%EB%B3%B4%EC%9E%90)   
-**vscode** 
+
+**insertOne/insertMany** 
 > vscode에서 터미널 열기
 > ```
 > npm init -y   
@@ -51,8 +53,8 @@ Build Info: {
  
 > parkage.json 해당 js로 수정
 > ```
-> "start": "node server.js"
-> "start": "node insert_one.js"
+> "start": "node server.js" (defualt) 를
+> "start": "node insert_one.js" 수정
 > ```
 
 > 터미널
@@ -65,17 +67,21 @@ Build Info: {
 > ```sql
 > db.getCollection('users').find({})
 > ```
-> 데이터 insert 되었는지 확인
-공식문서 참고 : [Node.js MongoDB Driver API](https://mongodb.github.io/node-mongodb-native/3.6/api/)
+> 데이터 insert 되었는지 확인    
+공식문서 참고 : [Node.js MongoDB Driver API](https://mongodb.github.io/node-mongodb-native/3.6/api/)    
+findOne, find, updateOne, updateMAny, deleteOne, deleteMany test 진행 
 
-
+> 터미널
+> ```
+> ctrl + c 
+> y
+> ```
 
 ***
 
 ## Mongoose 설치
 
 **1. mongodb vs mongoose**   
-
 - mongodb 라이브러리
     1. MongoDB Driver 모듈
     2. 따라서 mongo 콘솔 클라이언트 명령과 동일하게 조작 가능
@@ -84,25 +90,17 @@ Build Info: {
     2. 데이터베이스 연결, 스키마 정의, 스키마에서 모델로 변환, 모델을 이용해 데이터를 다룸
     3. 프로미스와 콜백 사용가능
 
-**2. Node JS - Mongoose 사용**
-```js
-const mongoose = require("mongoose");
-
-mongoose
-  .connect("mongodb://127.0.0.1:27017/task-manager", {
-    useNewUrlParser: true,
-    useCreateIndex: true,
-  })
-  .then(() => {
-    console.log("Connected to MongoDB");
-  })
-  .catch((err) => {
-    console.log(err);
-  });
-```
+**2. NodeJS - Mongoose**
 [Mongoose 사용하기](https://velog.io/@ckstn0777/Mongoose-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0)
+> vscode에서 터미널 열기
+> ``` 
+> npm install mongoose
+> ```
 
-[Mongoose ?](https://dev-skill.tistory.com/77)
+
+
+
+
 
 ***
 
