@@ -47,21 +47,21 @@ Build Info: {
 **insertOne/insertMany** 
 > vscode에서 터미널 열기
 > ```
-> npm init -y   
-> npm install mongodb
+> $npm init -y   
+> $npm install mongodb
 > ```
  
 > parkage.json 해당 js로 수정
 > ```
 > "start": "node server.js" (defualt) 를
-> "start": "node insert_one.js" 수정
+> "start": "node insertOne.js" 수정
 > ```
 
 > 터미널
 > ```
-> npm start
-> ```
-> Connected correctly. 출력하는지 확인하기    
+> $npm start
+> Connected correctly. 
+> ```   
 
 > Robo3T에서 shell 열기
 > ```sql
@@ -92,17 +92,88 @@ findOne, find, updateOne, updateMAny, deleteOne, deleteMany test 진행
 
 **2. NodeJS - Mongoose**
 [Mongoose 사용하기](https://velog.io/@ckstn0777/Mongoose-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0)
+[Mongo DB 연동 I - mongoose](https://javafa.gitbooks.io/nodejs_server_basic/content/chapter12.html)
+[Mongo DB 연동 II - mongodb client](https://javafa.gitbooks.io/nodejs_server_basic/content/chapter13.html)
+
 > vscode에서 터미널 열기
 > ``` 
-> npm install mongoose
+> $npm install mongoose
 > ```
 
+> conMongoose.js 생성
+> 1단계 : 연결
+> 2단계 : 스키마 생성
+> 3단계 : 모델 생성
+> 4단계 : 객체 생성
+> 5단계 : 저장
 
+> package.json 수정
+> "start": "node conMongoose.js" 
+> $npm start
 
+!! useCreateIndex 에러 발생 
+(Mongoose 연결 에러)[https://velog.io/@lee951109/MongoDB-MongoParseError-options-usecreateindex-usefindandmodify-are-not-supported]
 
+**3. 스키마 검증(Validation) 및 옵션**
 
+1. required
+```js
+  name: {
+    type: String,
+    required: true,
+  },
+```
+
+2. validate   
+```js
+  age: {
+    type: Number,
+    validate(value) {
+      if (value < 0) {
+        throw new Error("Age must be a postive number");
+      }
+    },
+  },
+```
+
+3. validator   
+- 이메일을 필드로 사용하고 싶은 경우 -> 검증 라이브러리 -> validator.isEmail 사용   
+- $npm i validator   
+- [validator의 여러 기능](https://www.npmjs.com/package/validator#validators)
+
+```js
+const validator = require("validator");
+const UserSchema = new mongoose.Schema({
+  email: {
+    type: String,
+    required: true,
+    validate(value) {
+      if (!validator.isEmail(value)) {
+        throw new Error("Email is invalid");
+      }
+    },
+  },
+});
+```
+
+4. string 관련 옵션 
+- lowercase, uppercase, trim, minlength 등
+- trim을 true로 주면 name을 " hongildong "를 "honglidong" 식으로 앞뒤 공백을 제거한 뒤 저장한다.
+- [공식문서](https://mongoosejs.com/docs/schematypes.html)
+```js
+  name: {
+    type: String,
+    trim: true,
+    required: true,
+  },
+```
 
 ***
+
+## NodeJS REST API + MongoDB(Mongoose)
+
+
+
 
 restAPI
 -----------------
