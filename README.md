@@ -74,7 +74,7 @@ findOne, find, updateOne, updateMAny, deleteOne, deleteMany test 진행
 > 터미널
 > ```
 > ctrl + c 
-> y
+> $y
 > ```
 
 ***
@@ -171,29 +171,42 @@ const UserSchema = new mongoose.Schema({
 ***
 
 ## NodeJS REST API + MongoDB(Mongoose)
+[api와 mongodb 사용](https://velog.io/@ckstn0777/NodeJS-REST-API-MongoDB-%EC%82%AC%EC%9A%A9)
+* package.json
+* index.js
+* -models
+  * -user.js
+* -api  : mini-app
+  * index.js
+  * -user
+    * index.js
+    * user.ctrl.js
 
+> package.json 수정
+> "start": "node index.js"
+> $npm start
 
+## 추가 참고 자료
 
+### restAPI
 
-restAPI
------------------
 [Node.js(express)와 MongoDB 연동 RESTful API - Mongoose](https://poiemaweb.com/mongoose)
+
+[Express 라우팅](https://expressjs.com/ko/guide/routing.html)
+
 ***
-TCP 소켓 통신 
------------------
+
+### TCP 소켓 통신 
+
 [Node.js에서 구현하는 소켓 서비스](https://mylko72.gitbooks.io/node-js/content/chapter8/intro.html)
 
 [NodeJS와 소켓 통신 연결](https://kimyc1223.github.io/2019-11-27-HoloLens004/)
 
 ***
-기타 참고자료 
------------------
+### 기타
+
 [MomgoDB 데이터베이스 관리](https://c5ecbb38d638.gitbooks.io/mongodb-install-manual/content/b370_c774_d130_bca0_c774_c2a4_ad00_b9ac.html)
 
 [다른 서버로 Mongodb 이전](https://novemberde.github.io/post/2017/07/01/Mongodb_transport/)
 
 [Node.JS, WebSocket, Socket.io, TCP, UDP 관련](https://202psj.tistory.com/1199)
-
-_박인규 선배님 참고자료 공유:)_   
-[node.js REST API 서버 만들기](https://velog.io/@wimes/series/back-end)   
-[NodeJS_REST-API_tutorial](https://github.com/kiryun/NodeJS_REST-API_template)
