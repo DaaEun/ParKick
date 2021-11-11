@@ -2,18 +2,9 @@
 
 const express = require("express");
 const router = express.Router();
-
-const user = require("./comment");
-const user = require("./parklot");
-const user = require("./rate");
 const user = require("./user");
-const user = require("./zone");
 
-router.use("/comments", user);
-router.use("/parklots", user);
-router.use("/rates", user);
 router.use("/users", user);
-router.use("/zones", user);
 
 module.exports = router;
 
