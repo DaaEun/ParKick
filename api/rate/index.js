@@ -1,13 +1,12 @@
-// /api/zone/zone.js
+// /api/rate/rate.js
 
 const express = require("express");
 const router = express.Router();
-const zoneController = require("./zone.ctrl");
+const rateController = require("./rate.ctrl");
 
-router.post("", zoneController.zoneCreate);
-router.get("", zoneController.zoneList);
-router.get("/:id", zoneController.zoneRead);
-router.delete("/:id", zoneController.zoneDelete);
+router.post("", rateController.rateCreate);
+router.get("", rateController.rateList);
+router.delete("/:id", rateController.rateDelete);
 
 module.exports = router;
 

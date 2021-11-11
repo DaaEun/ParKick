@@ -175,13 +175,29 @@ const UserSchema = new mongoose.Schema({
 * package.json
 * index.js
 * -models
-  * -user.js
+  * comment.js
+  * parklot.js
+  * rate.js
+  * user.js
+  * zone.js
 * -api  : mini-app
   * index.js
+  * -comment
+    * index.js
+    * comment.ctrl.js
+  * -parklot
+    * index.js
+    * parklot.ctrl.js  
+  * -rate
+    * index.js
+    * rate.ctrl.js 
   * -user
     * index.js
-    * user.ctrl.js
-
+    * user.ctrl.js 
+  * -zone
+    * index.js
+    * zone.ctrl.js
+  
 > package.json 수정
 > "start": "node index.js"
 > $npm start
@@ -210,3 +226,5 @@ const UserSchema = new mongoose.Schema({
 [다른 서버로 Mongodb 이전](https://novemberde.github.io/post/2017/07/01/Mongodb_transport/)
 
 [Node.JS, WebSocket, Socket.io, TCP, UDP 관련](https://202psj.tistory.com/1199)
+
+[Mongoose, Foreign Key 설정 및 Auto Increment Number 플러그인](https://mobicon.tistory.com/292)

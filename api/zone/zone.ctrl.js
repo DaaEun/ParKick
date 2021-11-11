@@ -1,5 +1,5 @@
-// /api/user/zone.ctrl.js
-const User = require("../../models/zone");
+// /api/zone/zone.ctrl.js
+const Zone = require("../../models/zone");
 
 /*
   POST /zones 주차공간 추가
@@ -40,7 +40,7 @@ exports.zoneRead = async (req, res) => {
   const id = req.params.id;
 
   try {
-    const zone = await User.findById(id);
+    const zone = await Zone.findById(id);
 
     if (!this.zoneRead) {
       return res.status(404).send();

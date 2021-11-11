@@ -1,13 +1,13 @@
-// /api/zone/zone.js
+// /api/parklot/parklot.js
 
 const express = require("express");
 const router = express.Router();
-const zoneController = require("./zone.ctrl");
+const parklotController = require("./parklot.ctrl");
 
-router.post("", zoneController.zoneCreate);
-router.get("", zoneController.zoneList);
-router.get("/:id", zoneController.zoneRead);
-router.delete("/:id", zoneController.zoneDelete);
+router.post("", parklotController.parklotCreate);
+router.get("", parklotController.parklotList);
+router.get("/:id", parklotController.parklotRead);
+router.delete("/:id", parklotController.parklotDelete);
 
 module.exports = router;
 
