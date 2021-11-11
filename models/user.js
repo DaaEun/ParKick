@@ -32,18 +32,22 @@ const UserSchema = new mongoose.Schema({
   // },
   email: {
     type: String,
-    required: true,
+    // required: true,
     validate(value) {
       if (!validator.isEmail(value)) {
         throw new Error("Email is invalid");
       }
     },
   },
-  saveDate: {
-    type: Date,
-    default: Date.now,
-  },
-});
+  // saveDate: {
+  //   type: Date,
+  //   default: Date.now,
+  // },
+},
+{
+  timestamps:true
+}
+);
 
 // 모델 생성
 const User = mongoose.model("User", UserSchema);
