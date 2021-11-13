@@ -7,8 +7,14 @@ const validator = require("validator");
 // 스키마 생성
 const RateSchema = new mongoose.Schema({
   like: {
-    type: Boolean,
-    default: true,
+    type: Number,
+  },
+  // like와 dislike 구분
+  // like : +1
+  // dislike : -1 
+  // APIserver에서 각각 count 갯수 세기 용이
+  dislike: {
+    type: Number,
   },
   saveDate: {
     type: Date,
